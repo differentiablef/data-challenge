@@ -1,6 +1,7 @@
 #+DATE 2019/07/08
+ 
 
-* Pandas "Data Challenges"
+* Pandas Data Challenges
 ** PyCitySchools
 ...
 ** HerosOfPymoli
