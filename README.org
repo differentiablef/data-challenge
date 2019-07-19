@@ -2,7 +2,14 @@
  
 
 * Pandas Data Challenges
+** Pymaceuticals
+~DONE~
+
 ** PyCitySchools
-...
+~DONE~
+
 ** HerosOfPymoli
-...
+~TODO~
+
+** Pyber
+~TODO~
