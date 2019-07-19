@@ -2,14 +2,14 @@
  
 
 * Pandas Data Challenges
-** Pymaceuticals
+** Pymaceuticals (matplotlib)
 ~DONE~
 
-** PyCitySchools
+** PyCitySchools (pandas)
 ~DONE~
 
-** HerosOfPymoli
+** HerosOfPymoli (pandas)
 ~TODO~
 
-** Pyber
+** Pyber (matplotlib)
 ~TODO~
