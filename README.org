@@ -1,13 +1,13 @@
 
 * Data Challenges
 ** Pymaceuticals (matplotlib)
-~DONE~
+ *In Progress*
 
 ** PyCitySchools (pandas)
-~DONE~
+ *DONE*
 
 ** HerosOfPymoli (pandas)
-~TODO~
+ *TODO*
 
 ** Pyber (matplotlib)
-~TODO~
+ *TODO*
