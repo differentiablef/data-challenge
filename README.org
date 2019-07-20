@@ -1,7 +1,7 @@
 #+DATE 2019/07/08
  
 
-* Pandas Data Challenges
+* Data Challenges
 ** Pymaceuticals (matplotlib)
 ~DONE~
 
