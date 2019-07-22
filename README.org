@@ -2,6 +2,12 @@
 * Data Challenges
 ** WeatherPy (web-apis)
 *In Progress*
+Requires the installation of the 'citipy' python module; a quick way to do this is with pip:
+
+#+BEGIN_SRC powershell
+pip install --user citipy
+#+END_SRC
+
 ** Pymaceuticals (matplotlib)
  *DONE*
 
