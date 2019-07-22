@@ -1,7 +1,7 @@
 
 * Data Challenges
 ** Pymaceuticals (matplotlib)
- *In Progress*
+ *DONE*
 
 ** PyCitySchools (pandas)
  *DONE*
