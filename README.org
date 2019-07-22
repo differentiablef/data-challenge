@@ -1,5 +1,7 @@
 
 * Data Challenges
+** WeatherPy (web-apis)
+*In Progress*
 ** Pymaceuticals (matplotlib)
  *DONE*
 
