@@ -1,5 +1,8 @@
 
 * Data Challenges
+** SQL-Employees (sql)
+=In progress=
+
 ** WeatherPy (web-apis)
 *In Progress*
 Requires the installation of the 'citipy' python module; a quick way to do this is with pip:
