@@ -56,7 +56,7 @@ CREATE TABLE dept_managers
 CREATE TABLE employees
 (
        emp_no INT,
-       birth_date TIMESTAMP,
+       birth_date DATE,
        first_name VARCHAR,
        last_name VARCHAR,
        gender VARCHAR(1),
