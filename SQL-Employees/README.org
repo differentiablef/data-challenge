@@ -1,0 +1,19 @@
+* SQL Employees
+** ./create-tables.sql
+Houses the create/copy statements which create and populate the tables for the database =employee_db=. To properly run, make sure =psql= is located somewhere in your PATH and execute the following
+
+#+BEGIN_SRC shell
+  psql -f ./create-tables.sql
+#+END_SRC
+
+** ./querys.sql
+
+This file contains the various querys required by this particular challenge.
+
+** ./diagram.svg
+
+SVG export of the relational diagram for the database created using =create-tables.sql=.
+
+** ./anatomy-of-fake-dataset.ipynb
+
+Contains the basic analysis of the provided dataset and details the characteristics which suggest it is fake.  
