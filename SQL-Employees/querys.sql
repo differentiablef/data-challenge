@@ -95,5 +95,13 @@ AND dept_employees.to_date >=  Now()
 -- Restrict to only 'Sales' department
 AND departments.dept_name = 'Sales';
 
--- In descending order, list the frequency count of employee
---      last names, i.e., how many employees share each last name.
+-- In descending order, list the frequency count of employee last names, 
+--      i.e., how many employees share each last name.
+
+SELECT
+    employees.last_name,
+    COUNT(employees.emp_no)
+FROM
+    employees
+GROUP BY
+      employees.last_name;
