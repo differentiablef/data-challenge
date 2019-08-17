@@ -3,6 +3,15 @@
 ** TODO SQL-Employees (sql)
 *In progress*
 
+The sql file =create_load_tables.sql=, creates tables for and then copies the contents of the various csv files to their appropriate table. To execute this 'script' run the following command,
+
+#+BEGIN_SRC shell
+  psql -U postgres -f ./create-load-tables.sql
+#+END_SRC
+
+(this assumes psql can be found somewhere in your PATH, and that the current working directory is =./SQL-Employees/=) 
+
+
 
 ** TODO WeatherPy (web-apis)
 *In Progress*
