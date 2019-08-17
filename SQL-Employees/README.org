@@ -17,3 +17,6 @@ SVG export of the relational diagram for the database created using =create-tabl
 ** ./anatomy-of-fake-dataset.ipynb
 
 Contains the basic analysis of the provided dataset and details the characteristics which suggest it is fake.  
+
+** ./data/
+This directory contains the provided dataset (which consists of several csv files.)
