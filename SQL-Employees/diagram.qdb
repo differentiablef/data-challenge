@@ -1,0 +1,54 @@
+departments
+-
+dept_no VARCHAR(5)
+dept_name VARCHAR
+
+
+employees
+-
+emp_no INT
+birth_date DATE
+first_name VARCHAR
+last_name VARCHAR
+gender VARCHAR(1)
+hire_date DATE
+
+
+dept_employees
+rel employees.emp_no
+rel departments.dept_no
+-----
+emp_no INT
+dept_no VARCHAR(5)
+from_date DATE
+to_date DATE
+
+dept_managers
+rel departments.dept_no 
+rel employees.emp_no
+-----
+emp_no INT
+dept_no VARCHAR(5)
+from_date DATE
+to_date DATE
+
+
+salaries
+rel -< employees.emp_no
+-----
+emp_no INT
+salary DECIMAL
+from_date DATE
+to_date DATE
+
+
+titles
+rel employees.emp_no
+-----
+emp_no INT
+title VARCHAR
+from_date DATE
+to_date DATE
+
+
+
