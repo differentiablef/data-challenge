@@ -3,7 +3,7 @@
 Houses the create/copy statements which create and populate the tables for the database =employee_db=. To properly run, make sure =psql= is located somewhere in your PATH and execute the following
 
 #+BEGIN_SRC shell
-  psql -f ./create-tables.sql
+  psql -U postgres -f ./create-tables.sql
 #+END_SRC
 
 ** ./querys.sql
