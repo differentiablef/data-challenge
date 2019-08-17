@@ -100,8 +100,10 @@ AND departments.dept_name = 'Sales';
 
 SELECT
     employees.last_name,
-    COUNT(employees.emp_no)
+    COUNT(employees.emp_no) AS frequnecy
 FROM
     employees
 GROUP BY
-      employees.last_name;
+      employees.last_name
+ORDER BY
+      frequnecy DESC;
