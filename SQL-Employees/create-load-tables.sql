@@ -5,6 +5,7 @@ DROP DATABASE IF EXISTS employee_db;
 CREATE DATABASE employee_db;
 
 -- Have the psql client connect to the newly created database
+--   (password stored in PGPASSWORD enviornment variable)
 
 \connect employee_db postgres localhost;
 
@@ -55,7 +56,7 @@ CREATE TABLE dept_managers
 
 CREATE TABLE employees
 (
-       emp_no INT,
+       emp_no INT PRIMARY KEY,
        birth_date DATE,
        first_name VARCHAR,
        last_name VARCHAR,
