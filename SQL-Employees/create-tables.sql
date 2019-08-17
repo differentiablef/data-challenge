@@ -91,29 +91,3 @@ CREATE TABLE titles
 
 \COPY titles FROM './data/titles.csv' DELIMITER ',' QUOTE '"' CSV HEADER;
 
-
--- Output from `head -n2 data/*.csv` 
--- ==> data/departments.csv <==
--- "dept_no","dept_name"
--- "d001","Marketing"
--- 
--- ==> data/dept_emp.csv <==
--- "emp_no","dept_no","from_date","to_date"
--- 10001,"d005","1986-06-26","9999-01-01"
--- 
--- ==> data/dept_manager.csv <==
--- "dept_no","emp_no","from_date","to_date"
--- "d001",110022,"1985-01-01","1991-10-01"
--- 
--- ==> data/employees.csv <==
--- "emp_no","birth_date","first_name","last_name","gender","hire_date"
--- 10001,"1953-09-02","Georgi","Facello","M","1986-06-26"
--- 
--- ==> data/salaries.csv <==
--- emp_no,salary,from_date,to_date
--- 10001,60117,1986-06-26,1987-06-26
--- 
--- ==> data/titles.csv <=
--- "emp_no","title","from_date","to_date"
--- 10001,"Senior Engineer","1986-06-26","9999-01-01"
--- 
