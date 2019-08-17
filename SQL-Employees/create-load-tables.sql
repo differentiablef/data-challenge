@@ -53,7 +53,6 @@ CREATE TABLE dept_managers
 -- Create employee table and
 --    copy the contents of the provided csv files into the table
 
-
 CREATE TABLE employees
 (
        emp_no INT PRIMARY KEY,
