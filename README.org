@@ -1,16 +1,15 @@
 
+
 * Data Challenges
+
+** TODO SQL-Climate (sql and flask)
+*In progress*
+
 ** DONE SQL-Employees (sql)
 *DONE*
 
 ** TODO WeatherPy (web-apis)
 *In Progress*
-
-Requires the installation of the 'citipy' python module; a quick way to do this is with pip:
-
-#+BEGIN_SRC powershell
-pip install --user citipy
-#+END_SRC
 
 ** DONE Pymaceuticals (matplotlib)
  *DONE*
