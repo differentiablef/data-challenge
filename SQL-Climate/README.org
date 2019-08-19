@@ -31,12 +31,6 @@ then, to create the tables,
          elevation DECIMAL);
 
 #+END_SRC
-#+RESULTS: create-tables
-| DROP TABLE   |
-|--------------|
-| CREATE TABLE |
-| DROP TABLE   |
-| CREATE TABLE |
 
 and finally to load the data,
 
@@ -46,7 +40,3 @@ and finally to load the data,
   \copy station from './Resources/hawaii_stations.csv' delimiter ',' csv header;
   \copy measurement(station, date, precip, temp_obs) from './Resources/hawaii_measurements.csv' delimiter ',' csv header;
 #+END_SRC
-#+RESULTS: load-data
-| COPY 9     |
-|------------|
-| COPY 19550 |
