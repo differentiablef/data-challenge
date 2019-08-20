@@ -4,58 +4,29 @@ from flask_api import FlaskAPI, status, exceptions
 
 app = FlaskAPI(__name__)
 
-
-notes = {
-    0: 'do the shopping',
-    1: 'build the codez',
-    2: 'paint the door',
-}
-
-def note_repr(key):
-    return {
-        'url': request.host_url.rstrip('/') + url_for('notes_detail', key=key),
-        'text': notes[key]
-    }
-
-
 @app.route("/", methods=['GET', 'POST'])
 def notes_list():
     """
-    List or create notes.
+    List routes.
     """
-    if request.method == 'POST':
-        note = str(request.data.get('text', ''))
-        idx = max(notes.keys()) + 1
-        notes[idx] = note
-        return note_repr(idx), status.HTTP_201_CREATED
+    return []
 
-    # request.method == 'GET'
-    return [note_repr(idx) for idx in sorted(notes.keys())]
+@app.route('/api/v1.0/precipitation', methods=['GET'])
+def precipitation():
+    return []
 
+@app.route('/api/v1.0/stations', methods=['GET'])
+def stations():
+    return []
 
-@app.route("/<int:key>/", methods=['GET', 'PUT', 'DELETE'])
-def notes_detail(key):
-    """
-    Retrieve, update or delete note instances.
-    """
-    if request.method == 'PUT':
-        note = str(request.data.get('text', ''))
-        notes[key] = note
-        return note_repr(key)
+@app.route('/api/v1.0/tobs', methods=['GET'])
+def tempurature():
+    return []
 
-    elif request.method == 'DELETE':
-        notes.pop(key, None)
-        return '', status.HTTP_204_NO_CONTENT
-
-    # request.method == 'GET'
-    if key not in notes:
-        raise exceptions.NotFound()
-    return note_repr(key)
-
-#/api/v1.0/precipitation
-#/api/v1.0/stations
-#/api/v1.0/tobs
-#/api/v1.0/<start> and /api/v1.0/<start>/<end>
+@app.route('/api/v1.0/<start>', methods=['GET'], strict_slashes=False)
+@app.route('/api/v1.0/<start>/<end>', methods=['GET'], strict_slashes=False)
+def range_summary(start, end=None):
+    return []
 
 
 if __name__ == "__main__":
