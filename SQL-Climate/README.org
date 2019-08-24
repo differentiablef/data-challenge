@@ -1,3 +1,4 @@
+
 * Setting up the Database
 To create the database, do the following
 
@@ -19,16 +20,16 @@ then, to create the tables,
          id SERIAL PRIMARY KEY,
          station VARCHAR,
          date DATE,
-         precip DECIMAL,
-         temp_obs DECIMAL);
+         precip REAL,
+         temp_obs REAL);
        
   drop table if exists station;
   create table station(
          station VARCHAR PRIMARY KEY,
          name VARCHAR,
-         latitude DECIMAL,
-         longitude DECIMAL,
-         elevation DECIMAL);
+         latitude REAL,
+         longitude REAL,
+         elevation REAL);
 
 #+END_SRC
 
@@ -40,3 +41,12 @@ and finally to load the data,
   \copy station from './Resources/hawaii_stations.csv' delimiter ',' csv header;
   \copy measurement(station, date, precip, temp_obs) from './Resources/hawaii_measurements.csv' delimiter ',' csv header;
 #+END_SRC
+
+* Running the Web-App
+ The app requires python version 3.7 or later and to run the app in debugging mode (after the database has been setup) proceed as follows
+
+ #+begin_src shell
+  python3 ./web-app.py
+ #+end_src
+
+ you will be provided the link for the development server in the output.
