@@ -2,14 +2,11 @@
 
 * Data Challenges
 
-** TODO SQL-Climate (sql and flask)
-*In progress*
+** DONE SQL-Climate (sql and flask)
+*DONE*
 
 ** DONE SQL-Employees (sql)
 *DONE*
-
-** TODO WeatherPy (web-apis)
-*In Progress*
 
 ** DONE Pymaceuticals (matplotlib)
  *DONE*
@@ -56,6 +53,9 @@ Doing this appears to be within the parameters of the exercise, since by default
 
 ** TODO Pyber (matplotlib)
  *TODO*
+
+** TODO WeatherPy (web-apis)
+*TODO*
 
 * Footnotes
 [fn:def] Depending on whether or not things like "black-frock" are taken to be two separate "words".
