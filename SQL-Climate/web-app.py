@@ -15,7 +15,7 @@ import datetime as dt
 # setup flask app
 app = FlaskAPI(__name__)
 
-# setup engine for postgresql 
+# setup engine for PostgreSQL 
 engine = create_engine("postgresql://postgres@localhost/hawaii")
 
 # reflect an existing database into a new model
@@ -38,41 +38,82 @@ def notes_list():
     """
     List routes.
     """
-    return {'end-points':['/api/v1.0/precipitation',
-                          '/api/v1.0/stations',
-                          '/api/v1.0/tobs',
-                          '/api/v1.0/<start-date:MM-DD-YYYY>',
-                          '/api/v1.0/<start-date:MM-DD-YYYY>/<end-date:MM-DD-YYYY>']}
+    return {'end-points':
+            ['/api/v1.0/precipitation',
+             '/api/v1.0/stations',
+             '/api/v1.0/tobs',
+             '/api/v1.0/<start-date:MM-DD-YYYY>',
+             '/api/v1.0/<start-date:MM-DD-YYYY>/<end-date:MM-DD-YYYY>']}
 
 @app.route('/api/v1.0/precipitation', methods=['GET'])
 def precipitation():
-    results = session.query( Measurement ).all()
-    tmp = dict([
-        (
-    return results
+    end_date = session.query( Measurement.date).\
+        order_by(desc(Measurement.date)).\
+        limit(1).all()[0][0]
+    begin_date = end_date - dt.timedelta(days=365)
+    
+    results = session.query( Measurement ).\
+        filter( Measurement.date >= begin_date ).\
+        filter( Measurement.date <= end_date ).\
+        all()
+    
+    return dict([(entry.date, entry.precip) for entry in results])
 
 @app.route('/api/v1.0/stations', methods=['GET'])
 def stations():
     results = session.query( Station ).all()
-    return  { 'stations':
-              [ [ result.station, result.name,
-                  result.latitude, result.longitude, result.elevation ] \
-                        for result in results ] }
+    return  [ dict([ ( 'id', result.station ),
+                     ( 'name', result.name ),
+                     ( 'lat', result.latitude ),
+                     ( 'lon', result.longitude ),
+                     ( 'elev', result.elevation ) ]) \
+                                  for result in results ]
 
 @app.route('/api/v1.0/tobs', methods=['GET'])
 def tempurature():
-    results = session.query( Measurement.date, Measurement.temp_obs ).all()
-    return results
+    end_date = session.query( Measurement.date).\
+        order_by(desc(Measurement.date)).\
+        limit(1).all()[0][0]
+    begin_date = end_date - dt.timedelta(days=365)
+    
+    results = session.query( Measurement ).\
+        filter( Measurement.date >= begin_date ).\
+        filter( Measurement.date <= end_date ).\
+        all()
+    
+    return dict([(entry.date, entry.precip) for entry in results])
 
 @app.route('/api/v1.0/<start>', methods=['GET'], strict_slashes=False)
 @app.route('/api/v1.0/<start>/<end>', methods=['GET'], strict_slashes=False)
 def range_summary(start, end=None):
+
+    try:
+        begin_date = dt.datetime.strptime(start, "%m-%d-%Y")
+    except:
+        return "Invalid date format (start-date)"
+
     
-    begin_date = dt.datetime.strptime(start, "%m-%d-%Y")
+    results = session.query(
+        func.avg(Measurement.temp_obs),
+        func.max(Measurement.temp_obs),
+        func.min(Measurement.temp_obs)).\
+        filter( begin_date <= Measurement.date )
+
     if end:
-        end_date = dt.datetime.strptime(end, "%m-%d-%Y")
+        try:
+            end_date = dt.datetime.strptime(end, "%m-%d-%Y")
+        except:
+            return "Invalid date format (end-date)"
         
-    return ['range_summary']
+        results = results.filter( end_date >= Measurement.date )
+        pass
+
+    results = results.all()[0]
+    
+    return dict([
+        ('mean', results[0]),
+        ('max', results[1]),
+        ('min', results[2])])
 
 # ##############################################################################
 

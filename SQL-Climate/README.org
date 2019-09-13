@@ -42,6 +42,15 @@ and finally to load the data,
   \copy measurement(station, date, precip, temp_obs) from './Resources/hawaii_measurements.csv' delimiter ',' csv header;
 #+END_SRC
 
+
+Alternatively, one can simply execute 
+
+#+begin_src shell
+  psql -U postgres -f ./create-database.sql 
+#+end_src
+
+from an available terminal (assuming =psql= is located somewhere in your path; and the working directory of the shell is this sub-directory of the repo.)
+
 * Running the Web-App
  The app requires python version 3.7 or later and to run the app in debugging mode (after the database has been setup) proceed as follows
 
