@@ -13,7 +13,7 @@ client = pymongo.MongoClient(conn)
 @app.route('/')
 def main():
     info = client.marsdb.front_page.find()
-    return render_template('index.html', info=info[-1])
+    return render_template('index.html', info=info[0])
 
 @app.route('/scrape')
 def do_scrape():
