@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Info</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    <h1 class="jumbotron">Information About Mars</h1>
+    <div class="row">
+      <div class="col-">
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <h2>Latest Mars News</h2>
+        <article>
+          <h2>{{info.news_title}}</h2>
+          <p>{{info.news_p}}</p>
+        </article>
+      </div>
+      <div class="col-4">
+        <h2>Featured Image</h2>
+        <img src="{{info.featured_image_url}}" width="300px" alt="" />
+        <!--
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Type</th>            
+                <th scope="col">Cost</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Potential Rev.</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in inventory %}
+              <tr>
+                <th scope="row" align="left">{{loop.index}}</th>
+                <td>{{item.type}}</td>
+                <td>{{item.cost}}</td>
+                <td>{{item.stock}}</td>
+                <td align="right">{{'%0.2f' % (item.stock * item.cost)}}</td>
+              </tr>
+              <tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          -->
+      </div>
+      <div class="col-4">
+        <h2>Latest Weather</h2>
+        {{info.mars_weather}}
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <h2>General Information</h2>
+        {{info.mars_facts_table|safe}}
+      </div>
+      <div class="col-6">
+        <h1>Hemispheres</h1>
+        
+        {% for hemi in info.hemisphere_image_urls %}
+        <a class="flush-left" href="{{hemi.img_url}}">{{hemi.title}}</a></br>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
