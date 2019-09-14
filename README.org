@@ -1,12 +1,12 @@
 
 
 * Data Challenges
-** TODO PyMissionToMars 
-*In progress*
-** DONE SQL-Climate (sql and flask)
+** DONE PyMissionToMars (MongoDB, flask, pandas, BeautifulSoup and splinter) 
+*Done*
+** DONE SQL-Climate (PostgresSQL and flask)
 *DONE*
 
-** DONE SQL-Employees (sql)
+** DONE SQL-Employees (PostgresSQL)
 *DONE*
 
 ** DONE Pymaceuticals (matplotlib)
