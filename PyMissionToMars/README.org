@@ -1,0 +1,12 @@
+** Mission To Mars
+*** ./mission_to_mars.ipynb
+Contains rough-out of web-scraping code. 
+
+*** ./scrape_mars.py
+Provides finalized =scrape= method for used flask app =app.py=.
+
+*** ./app.py
+Finalized flask app.
+
+*** ./templates/
+Holds Jinja2 template files for flask app.
