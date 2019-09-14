@@ -1,7 +1,7 @@
 
 
 * Data Challenges
-** DONE PyMissionToMars (MongoDB, flask, pandas, BeautifulSoup and splinter) 
+** DONE PyMissionToMars (MongoDB, flask, and web-scraping) 
 *Done*
 ** DONE SQL-Climate (PostgresSQL and flask)
 *DONE*
