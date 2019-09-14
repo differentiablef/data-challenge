@@ -3,7 +3,7 @@
 Contains rough-out of web-scraping code. 
 
 *** ./scrape_mars.py
-Provides finalized =scrape= method for used flask app =app.py=.
+Provides finalized =scrape= method used by flask app =app.py=.
 
 *** ./app.py
 Finalized flask app.
